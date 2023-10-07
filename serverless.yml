@@ -1,0 +1,20 @@
+org: jb08brownie
+app: nasa
+service: nasa-daily-image
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+functions:
+  function1:
+    handler: index.handler
+    events:
+      - schedule: cron(30 5 * * ? *)
+    environment:
+      NASA_API_KEY: LweSfLeGzLKae9xfHc7YfJKBZBPzZwhWFrXAxo5j
+      TWILIO_ACCOUNT_SID: ACee113b850df5a0849f0e1943669c0646
+      TWILIO_AUTH_TOKEN: b2e493d3d0deda830f9214999f25e344
+      TWILIO_PHONE_NUMBER: +447458155154
+      MY_PHONE_NUMBER: +447931608072
